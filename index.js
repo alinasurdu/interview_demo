@@ -4,7 +4,16 @@ $('#card_btn').click(function(){ add_card(); return false; });
 
 function add_card() {
 
-	alert('hello');
+	//alert('hello');
+	var colomn_body = document.getElementById ("creation_space");
+	//console.log(colomn_body.innerHTML); 
+
+	var new_card = "some html";
+	var result = colomn_body.innerHTML + new_card; 
+	//console.log(result); 
+
+
+	colomn_body.innerHTML = result;
 
 	// var container = document.getElementById ("creation_space");
 	// container.innerHTML = nnn
