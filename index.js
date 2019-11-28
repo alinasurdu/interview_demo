@@ -6,19 +6,19 @@ $('#card_btn').click(function(){ add_card(); return false; });
 function load_products()
 {
 	var json = [
-		{ "id" : "1", "titlu"   : "til1" },
-		{ "id" : "1", "titlu"   : "til12" },
-		{ "id" : "1", "titlu"   : "til3" },
-		{ "id" : "1", "titlu"   : "til4" },
-		{ "id" : "1", "titlu"   : "til15" },
-		{ "id" : "1", "titlu"   : "til1658" }
+		{ "id" : "1", "titlu"   : "til1", "image" : "", "price": "50$"},
+		{ "id" : "1", "titlu"   : "til12", "image" : "", "price": "100$" },
+		{ "id" : "1", "titlu"   : "til3", "image" : "", "price": "70$" },
+		{ "id" : "1", "titlu"   : "til4", "image" : "", "price": "120$" },
+		{ "id" : "1", "titlu"   : "til15", "image" : "", "price": "200$" },
+		{ "id" : "1", "titlu"   : "til1658","image" : "", "price": "180$" }
 	];
 	
 	
 	for(var i = 0; i < json.length; i++) 
 	{
 		var obj = json[i];
-		add_card(obj.titlu);
+		add_card( obj.image,obj.titlu, obj.price);
 	}
 
 }
@@ -27,7 +27,7 @@ function load_products()
 window.addEventListener('load', function(){ load_products();  });
 
 
-function add_card(prod_name) {
+function add_card(prod_name, prod_image, prod_price) {
 
 	//alert('hello');
 	var colomn_body = document.getElementById ("creation_space");
@@ -36,7 +36,7 @@ function add_card(prod_name) {
 	var new_card = "<div class='card column '>" ;
 
 	new_card += "<div class='row ' id='top_img'><div class='col-md-12'>";
-	new_card +="<img src='images/res_60a4225bafc7334dc49ee1286c2aa915.jpg' class='card-img-top'alt='tommy hilfiger' style='width:100%'>";
+	new_card +="<img src='images/res_60a4225bafc7334dc49ee1286c2aa915.jpg' class='card-img-top'alt='tommy hilfiger' style='width:100%'>" + prod_image;
 	new_card +="</div>";
 	new_card +="</div>";
 	new_card +="<div class='row' id='product_name'>";
@@ -48,9 +48,7 @@ function add_card(prod_name) {
 	new_card +="</div>";
 	new_card +="<div class='row' id='price_btn'>";
 	new_card +="<div class='col-md-6'>";
-	new_card +="<button type='button' class='btn btn-info  btn-sm  fa fa-shopping-cart shopp_btn'>";
-	new_card +="50 $";
-	new_card +="</button>";
+	new_card +="<button type='button' class='btn btn-info  btn-sm  '>" + prod_price + "</button>";
 	new_card +="</div>";
 	new_card +="<div class='col-md-6' id='add_to_cart'>";
 	new_card +="<button type='button' class='btn btn-info  btn-sm  fa fa-shopping-cart shopp_btn'></button>";
