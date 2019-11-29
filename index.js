@@ -1,7 +1,7 @@
 // ne legam de id-ul butonului 
 //$('#cart_btn').click(function(){ add_to_cart(); return false; });
 
-
+var cart_total = 0;
 
 function load_products()
 {
@@ -52,7 +52,7 @@ function add_card(prod_id, prod_name, prod_image, prod_price) {
 	new_card +="<div class='col-md-6 no_padding'>";
 	new_card +="<p class='price_style'>" + prod_price + "</p>";
 	new_card +="</div>";
-	new_card +="<div class='col-md-6 no_padding' id='add_to_cart'>";
+	new_card +="<div class='col-md-6 no_padding' >";
 	new_card +="<button type='button' class='btn btn-info  btn-sm  fa fa-shopping-cart shopp_btn' onClick='add_to_cart(\""+prod_id+ "\",  \"" +prod_name +"\" , \"" + prod_image +"\" , \""+prod_price+"\" );' ></button>";
 	new_card +="</div>";
 	new_card +="</div>";
@@ -69,25 +69,33 @@ function add_card(prod_id, prod_name, prod_image, prod_price) {
 
 
 
+
+
+
 function add_to_cart(id, titlul, image_name, price) {
 
 	//alert('hello');
 	var colomn_body = document.getElementById ("cart_space");
 	//console.log(colomn_body.innerHTML); 
+	var total_cart_element= document.getElementById("total_value");
 
 	var new_card = " <li>" + titlul + "</li>"  ;
 	new_card += " <li class='li_aling'>" + price +"</li>"  ;
 	new_card += " <li> ---- </li>"  ;
+	
+	colomn_body.innerHTML += new_card ; // add new card value to body catd
+
+	// updatam cos
+	cart_total += parseInt(price, 10);
+	
+	//afisam cos
+	total_cart_element.innerText = cart_total + ' $' ;
 
 	
-	var result = colomn_body.innerHTML + new_card; 
-	//console.log(result); 
 
 
-	colomn_body.innerHTML = result;
-
-	
 
 }
+
 
 
