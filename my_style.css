@@ -8,7 +8,7 @@
 
 
 
-body {
+.body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
@@ -23,7 +23,7 @@ body {
   }
   
   /* Add rounded corners to the top left and the top right corner of the image */
-  img {
+ .img {
     border-radius: 5px 5px 0 0;
   }
 
@@ -33,8 +33,9 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
-  /* Add some padding inside the card container */
-  .container {
+
+/* Add some padding inside the card container */
+.container {
     padding: 2px 16px;
 }
 
@@ -42,7 +43,7 @@ body {
     float: left;
     width: 25%;
     padding: 0 10px;
-  }
+}
 
   /* Remove extra left and right margins, due to padding in columns */
 .row {margin: 0 -5px;}
@@ -59,7 +60,36 @@ body {
     /* position: absolute;  */
     right: 0;
     bottom: 0;
+    font-size: 15px;
+    float: right;
 }
-.shopp_btn_text{
-    font-size: 5;
+
+.card_font{
+  font: 100  verdana;
+}
+
+.cart_items{
+  list-style-type: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.no_padding{
+  padding: 0px;
+}
+
+.shopping_card{
+  padding: 10px;
+}
+.li_aling{
+  text-align: right;
+}
+
+.item_name_align{
+  text-align: center;
+}
+
+.price_style{
+ 
+  font-family: "Arial Black", Gadget, sans-serif;
 }
