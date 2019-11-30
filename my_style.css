@@ -64,6 +64,15 @@
     float: right;
 }
 
+.delete_btn{
+  /* position: absolute;  */
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  float: right;
+}
+
+
 .card_font{
   font: 100  verdana;
 }
